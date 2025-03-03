@@ -1,6 +1,6 @@
 # UHVM Clima
 
-Este projeto simula a coleta de dados meteorológicos para cidades utilizando sensores virtuais. Ele gera dados aleatórios para diversas variáveis climáticas e os grava em um arquivo CSV.
+UHVM Clima é um simulador de coleta de dados meteorológicos, gerando registros de temperatura, pressão, umidade, altitude, direção do vento, velocidade do vento, precipitação e índice UV, e os salva em um CSV.
 
 O projeto foi baseado no artigo "Read environmental conditions from a sensor", que demonstra como usar .NET para coletar dados ambientais com sensores. Adaptei o conceito para simular a coleta de dados sem depender de hardware específico.
 
