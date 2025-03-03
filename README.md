@@ -32,14 +32,28 @@ dotnet build
 dotnet run
 ```
 
-### Executando via Docker
+## Executando via Docker
 
-1. Construa a imagem Docker:
+1. Baixe a imagem do Docker Hub:
+
+```bash
+docker pull matheusmaia535/uhvm_clima:latest
+```
+
+2. Construa a imagem Docker (caso necessário):
+
 ```bash
 docker build -t uhvm_clima .
 ```
 
-2. Execute o container:
+3. Crie a pasta `dados` para armazenar os arquivos gerados:
+
+```bash
+mkdir -p dados
+```
+
+4. Execute o container:
+
 ```bash
 docker run --rm -v $(pwd)/dados:/app/dados uhvm_clima
 ```
