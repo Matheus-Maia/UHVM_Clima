@@ -2,6 +2,10 @@
 
 Este projeto simula a coleta de dados meteorológicos para cidades utilizando sensores virtuais. Ele gera dados aleatórios para diversas variáveis climáticas e os grava em um arquivo CSV.
 
+O projeto foi baseado no artigo "Read environmental conditions from a sensor", que demonstra como usar .NET para coletar dados ambientais com sensores. Adaptei o conceito para simular a coleta de dados sem depender de hardware específico.
+
+https://learn.microsoft.com/en-us/dotnet/iot/tutorials/temp-sensor
+
 ## 📋 Tecnologias Utilizadas
 - C# (.NET 9)
 - Docker (opcional)
