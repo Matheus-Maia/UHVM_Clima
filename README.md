@@ -72,7 +72,7 @@ Cada execução gera um arquivo CSV com o seguinte formato:
 
 ## 🛠️ Como Funciona
 - A classe `SimulatedSensor` gera valores aleatórios para temperatura, pressão, umidade, altitude, direção do vento, velocidade do vento, chuva e índice UV.
-- A classe `DateTimeSimulator` gera datas aleatórias entre 2023 e a data atual.
+- A classe `DateTimeSimulator` gera a data aleatória para o ano 2025.
 - Os dados são escritos em um arquivo CSV a cada iteração com um intervalo simulado de 1 segundo.
 
 ## 🚀 Autor
