@@ -5,7 +5,6 @@ using System.Globalization;
 
 // Simulação de coleta de dados de sensores em C#
 // O código gera dados aleatórios de temperatura, pressão, umidade, entre outros, e grava esses dados em um arquivo CSV.
-// A data de início é gerada aleatoriamente, e o tempo é simulado para avançar a cada iteração do loop a cada 100 minutos.
 
 // Interface que define o método para leitura de dados do sensor
 public interface ISensor
@@ -40,10 +39,10 @@ public class DateTimeSimulator
 {
     private Random _random = new Random();
 
-    // Simula uma data entre um ano específico e a data atual
+    // Simula uma data do ano 2025
     public DateTime GenerateRandomDate()
     {
-        int year = 2023; // Define o ano base
+        int year = 2025; // Define o ano base
         int month = _random.Next(1, 13); // Mês entre 1 e 12
         int day = _random.Next(1, DateTime.DaysInMonth(year, month) + 1); // Dia válido para o mês
         return new DateTime(year, month, day);
@@ -66,15 +65,14 @@ class Program
 
         DateTime startTime = dateSimulator.GenerateRandomDate();
 
-        // Loop para 24 horas (de 0000 até 2300)
-        for (int setOfHour = 0; setOfHour < 2400; setOfHour += 100)
+        // Loop para 24 horas
+        for (int setOfHour = 0; setOfHour < 24; setOfHour += 1)
         {
-            DateTime currentTime = startTime.AddHours(setOfHour / 100); // Avança o tempo em 1 hora a cada iteração
+            DateTime currentTime = startTime.AddHours(setOfHour); // Avança o tempo em 1 hora a cada iteração
             string timestamp = currentTime.ToString("yyyy-MM-dd");
             string day = currentTime.Day.ToString("00");
             string month = currentTime.Month.ToString("00");
-            string utcTime = setOfHour.ToString("0000"); // Formato HH:mm (ex: 00:00, 01:00, etc.)
-
+            string utcTime = setOfHour.ToString("0000"); // Formato UTC
             Console.Clear();
             var data = sensor.ReadData();
 
@@ -98,8 +96,7 @@ class Program
 
             // Escreve no arquivo
             File.AppendAllText(filePath, csvLine);
-
-            // "Espera 1 hora antes da próxima leitura" (simulado com 100 ms)
+            
             Thread.Sleep(1000); // 1s
         }
 
