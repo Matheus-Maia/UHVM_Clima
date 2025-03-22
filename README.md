@@ -26,12 +26,17 @@ cd UHVM_Clima
 
 ### Executando via .NET
 
-1. Compile o projeto:
+1. restaura as dependências do projeto, baixando e instalando os pacotes NuGet necessários:
+```bash
+dotnet restore
+```
+
+2. Compile o projeto:
 ```bash
 dotnet build
 ```
 
-2. Execute o projeto:
+3. Execute o projeto:
 ```bash
 dotnet run
 ```
